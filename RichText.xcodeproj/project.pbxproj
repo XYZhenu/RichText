@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10049C3A1EFA99840018FD1B /* XYRichTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10049C391EFA99840018FD1B /* XYRichTextVC.m */; };
 		8C30E8EDF0AC76E5CC81743A /* Pods_RichText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7F461816EDF4C030D987F5 /* Pods_RichText.framework */; };
 		AC1A0A191EFA510A00D6E166 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A181EFA510A00D6E166 /* main.m */; };
 		AC1A0A1C1EFA510A00D6E166 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A1B1EFA510A00D6E166 /* AppDelegate.m */; };
@@ -14,10 +15,11 @@
 		AC1A0A221EFA510A00D6E166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A201EFA510A00D6E166 /* Main.storyboard */; };
 		AC1A0A241EFA510A00D6E166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A231EFA510A00D6E166 /* Assets.xcassets */; };
 		AC1A0A271EFA510A00D6E166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A251EFA510A00D6E166 /* LaunchScreen.storyboard */; };
-		AC1A0A311EFA52C500D6E166 /* RichTextEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A301EFA52C500D6E166 /* RichTextEditVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10049C381EFA99840018FD1B /* XYRichTextVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYRichTextVC.h; sourceTree = "<group>"; };
+		10049C391EFA99840018FD1B /* XYRichTextVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRichTextVC.m; sourceTree = "<group>"; };
 		9B7F461816EDF4C030D987F5 /* Pods_RichText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45FDFC13F3C9B820C3DF756 /* Pods-RichText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichText.release.xcconfig"; path = "Pods/Target Support Files/Pods-RichText/Pods-RichText.release.xcconfig"; sourceTree = "<group>"; };
 		AC1A0A141EFA510A00D6E166 /* RichText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichText.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,8 +32,6 @@
 		AC1A0A231EFA510A00D6E166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC1A0A261EFA510A00D6E166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC1A0A281EFA510A00D6E166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC1A0A2F1EFA52C500D6E166 /* RichTextEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextEditVC.h; sourceTree = "<group>"; };
-		AC1A0A301EFA52C500D6E166 /* RichTextEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextEditVC.m; sourceTree = "<group>"; };
 		C32A01C6AF8FC97BC8F29F4C /* Pods-RichText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RichText/Pods-RichText.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10049C371EFA996A0018FD1B /* RichTextEdit */ = {
+			isa = PBXGroup;
+			children = (
+				10049C381EFA99840018FD1B /* XYRichTextVC.h */,
+				10049C391EFA99840018FD1B /* XYRichTextVC.m */,
+			);
+			path = RichTextEdit;
+			sourceTree = "<group>";
+		};
 		3BF91A27FED90A65911BD30B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +94,7 @@
 		AC1A0A161EFA510A00D6E166 /* RichText */ = {
 			isa = PBXGroup;
 			children = (
-				AC1A0A2E1EFA52A600D6E166 /* RichTextEdit */,
+				10049C371EFA996A0018FD1B /* RichTextEdit */,
 				AC1A0A1A1EFA510A00D6E166 /* AppDelegate.h */,
 				AC1A0A1B1EFA510A00D6E166 /* AppDelegate.m */,
 				AC1A0A1D1EFA510A00D6E166 /* ViewController.h */,
@@ -105,15 +114,6 @@
 				AC1A0A181EFA510A00D6E166 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC1A0A2E1EFA52A600D6E166 /* RichTextEdit */ = {
-			isa = PBXGroup;
-			children = (
-				AC1A0A2F1EFA52C500D6E166 /* RichTextEditVC.h */,
-				AC1A0A301EFA52C500D6E166 /* RichTextEditVC.m */,
-			);
-			path = RichTextEdit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +214,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DBBEF21BFBE2380C402D29A2 /* [CP] Copy Pods Resources */ = {
@@ -240,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC1A0A1F1EFA510A00D6E166 /* ViewController.m in Sources */,
-				AC1A0A311EFA52C500D6E166 /* RichTextEditVC.m in Sources */,
 				AC1A0A1C1EFA510A00D6E166 /* AppDelegate.m in Sources */,
+				10049C3A1EFA99840018FD1B /* XYRichTextVC.m in Sources */,
 				AC1A0A191EFA510A00D6E166 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
