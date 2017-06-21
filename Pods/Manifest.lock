@@ -1,0 +1,17 @@
+PODS:
+  - TZImagePickerController (1.7.9)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - TZImagePickerController
+  - YYKit
+
+SPEC CHECKSUMS:
+  TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 0bd6bea7d3b3ec69673e50c128ae971b28efa0eb
+
+COCOAPODS: 1.2.0
