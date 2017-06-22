@@ -15,6 +15,8 @@
 		AC1A0A221EFA510A00D6E166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A201EFA510A00D6E166 /* Main.storyboard */; };
 		AC1A0A241EFA510A00D6E166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A231EFA510A00D6E166 /* Assets.xcassets */; };
 		AC1A0A271EFA510A00D6E166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A251EFA510A00D6E166 /* LaunchScreen.storyboard */; };
+		AC1A0A371EFBAAE100D6E166 /* XYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A361EFBAAE100D6E166 /* XYCache.m */; };
+		AC1A0A3A1EFBCB7E00D6E166 /* XYBatchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		AC1A0A231EFA510A00D6E166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC1A0A261EFA510A00D6E166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC1A0A281EFA510A00D6E166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC1A0A351EFBAAE100D6E166 /* XYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYCache.h; sourceTree = "<group>"; };
+		AC1A0A361EFBAAE100D6E166 /* XYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCache.m; sourceTree = "<group>"; };
+		AC1A0A381EFBCB7E00D6E166 /* XYBatchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBatchProcessor.h; sourceTree = "<group>"; };
+		AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYBatchProcessor.m; sourceTree = "<group>"; };
 		C32A01C6AF8FC97BC8F29F4C /* Pods-RichText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RichText/Pods-RichText.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +58,10 @@
 			children = (
 				10049C381EFA99840018FD1B /* XYRichTextVC.h */,
 				10049C391EFA99840018FD1B /* XYRichTextVC.m */,
+				AC1A0A381EFBCB7E00D6E166 /* XYBatchProcessor.h */,
+				AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */,
+				AC1A0A351EFBAAE100D6E166 /* XYCache.h */,
+				AC1A0A361EFBAAE100D6E166 /* XYCache.m */,
 			);
 			path = RichTextEdit;
 			sourceTree = "<group>";
@@ -239,7 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1A0A3A1EFBCB7E00D6E166 /* XYBatchProcessor.m in Sources */,
 				AC1A0A1F1EFA510A00D6E166 /* ViewController.m in Sources */,
+				AC1A0A371EFBAAE100D6E166 /* XYCache.m in Sources */,
 				AC1A0A1C1EFA510A00D6E166 /* AppDelegate.m in Sources */,
 				10049C3A1EFA99840018FD1B /* XYRichTextVC.m in Sources */,
 				AC1A0A191EFA510A00D6E166 /* main.m in Sources */,
