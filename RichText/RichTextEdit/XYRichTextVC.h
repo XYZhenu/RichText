@@ -18,12 +18,13 @@ typedef NS_ENUM(NSUInteger,XYRichTextImageSaveType) {
 @property (nonatomic,strong,nullable)UIImage* image;
 @property (nonatomic,strong,nullable)NSDictionary* info;
 @property (nonatomic,strong,nullable)NSURL* url;
+@property (nonatomic,strong,nullable)NSString* identifier;
 @end
 @interface XYRichTextVC : UIViewController
-@property (nonatomic,strong)NSString* picSymbol;//default [
+@property (nonatomic,strong)NSString* picSymbolPrefix;//default [
+@property (nonatomic,strong)NSString* picSymbolSuffix;//default ]
 - (void)pickImage:(void(^)(NSArray<PHAsset*>* assets, NSArray<UIImage*>*images,NSArray<NSDictionary *> *infos))complete;
 @property(nonatomic,assign)XYRichTextImageSaveType saveType;
-- (void)onImageSave:(NSArray<XYRichTextImage*>*)images;
-- (void)editCompleteWithText:(NSString*)content images:(NSDictionary<NSString*,XYRichTextImage*>*)images;
+- (void)onSaveWithText:(NSString*)content images:(NSDictionary<NSString*,XYRichTextImage*>*)images complete:(BOOL)complete;
 @end
 NS_ASSUME_NONNULL_END
