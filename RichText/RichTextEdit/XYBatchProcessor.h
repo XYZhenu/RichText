@@ -17,7 +17,7 @@ extern NSString* const keyNotificationXYBatchProcesserReturn;
 
 -(void)suspend:(NSString*)identifier;
 -(void)deleteId:(NSString*)identifier;
-
+-(void)resume:(NSString*)identifier;
 
 -(void)convertObject:(id)obj complete:(void(^)(id obj))complete;
 

@@ -28,10 +28,9 @@ typedef NS_ENUM(NSUInteger,_XYProcessStatus) {
 @property(nonatomic,strong)NSString* processedId;
 @property(nonatomic,strong)id msg;
 
-@property(nonatomic,assign)BOOL isConverted;
-
 @property(nonatomic,weak)id<XYBatchProcessorCancelable>processOperation;
 -(NSDictionary*)descriptionDic;
+-(void)setDescriptionDic:(NSDictionary*)dic;
 @end
 
 @implementation _XYBatchProcessorModel
@@ -40,7 +39,6 @@ typedef NS_ENUM(NSUInteger,_XYProcessStatus) {
     self = [super init];
     if (self) {
         self.status = _XYProcessStatusRunning;
-        self.isConverted = NO;
     }
     return self;
 }
@@ -49,6 +47,10 @@ typedef NS_ENUM(NSUInteger,_XYProcessStatus) {
              @"retriveid":(self.retriveId?self.retriveId:@""),
              @"processedid":(self.processedId?self.processedId:@""),
              };
+}
+-(void)setDescriptionDic:(NSDictionary*)dic{
+    self.processedId = ((NSString*)dic[@"processedid"]).length > 0 ? dic[@"processedid"] : nil;
+    self.retriveId = ((NSString*)dic[@"retriveid"]).length > 0 ? dic[@"retriveid"] : nil;
 }
 @end
 
@@ -142,7 +144,42 @@ static XYBatchProcessor* processor = nil;
 }
 
 -(void)resume:(NSString*)identifier{
-    
+    NSArray<_XYBatchProcessorModel*>*models = self.processDic[identifier];
+    if (models) {
+        BOOL iscomplete = YES;
+        for (_XYBatchProcessorModel*model in models) {
+            if (model.status == _XYProcessStatusDone) continue;
+            model.status = _XYProcessStatusRunning;
+            if (!model.processOperation && !model.processedId) {
+                [self.processQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_ProcessModel:) object:model]];
+            }
+            iscomplete = NO;
+        }
+        for (_XYBatchProcessorModel* item in models) { if (!item.processedId) return; }
+        for (_XYBatchProcessorModel* item in models) {
+            if (!item.retriveId) {
+                __weak typeof(self) weakself = self;
+                [self.saveCompleteHandlers setValue:^void(){ [weakself _ProcessComplete:identifier]; } forKey:identifier];
+                return;
+            }
+        }
+        [self.processQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_ProcessComplete:) object:identifier]];
+    }else{
+        NSArray* operationarray = [XYCache arrayForKey:identifier group:@"batchProcesser"];
+        if (operationarray) {
+            NSMutableArray *modelArray = [NSMutableArray arrayWithCapacity:operationarray.count];
+            self.processDic[identifier] = modelArray;
+            for (NSInteger i = 0; i < operationarray.count; i++) {
+                _XYBatchProcessorModel* model = [_XYBatchProcessorModel new];
+                model.batchIdentifier = identifier;
+                [model setDescriptionDic:operationarray[i]];
+                
+                NSInvocationOperation * oper = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_RetriveModel:) object:model];
+                [self.processQueue addOperation:oper];
+                [modelArray addObject:model];
+            }
+        }
+    }
 }
 
 -(void)cleanIdentifier:(NSString*)identifier{
@@ -163,12 +200,9 @@ static XYBatchProcessor* processor = nil;
 -(void)_ConvertModel:(_XYBatchProcessorModel*)model{
     [self convertObject:model.msg complete:^(id obj) {
         model.msg = obj;
-        model.isConverted = YES;
+        [self.processQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_SaveModel:) object:model]];
         if (model.status==_XYProcessStatusSuspended) return;
-        NSInvocationOperation * oper = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_ProcessModel:) object:model];
-        [self.processQueue addOperation:oper];
-        NSInvocationOperation * oper1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_SaveModel:) object:model];
-        [self.processQueue addOperation:oper1];
+        [self.processQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_ProcessModel:) object:model]];
     }];
 }
 -(void)convertObject:(id)obj complete:(void (^)(id))complete{
@@ -204,6 +238,13 @@ static XYBatchProcessor* processor = nil;
 }
 
 
+
+-(void)_RetriveModel:(_XYBatchProcessorModel*)model{
+    [self retriveObjectforId:model.retriveId complete:^(id retriveObj) {
+        model.msg = retriveObj;
+        [self.processQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(_ProcessModel:) object:model]];
+    }];
+}
 -(void)retriveObjectforId:(NSString*)retriveid complete:(void(^)(id retriveObj))complete{
     
 }
