@@ -17,6 +17,7 @@
 		AC1A0A271EFA510A00D6E166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0A251EFA510A00D6E166 /* LaunchScreen.storyboard */; };
 		AC1A0A371EFBAAE100D6E166 /* XYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A361EFBAAE100D6E166 /* XYCache.m */; };
 		AC1A0A3A1EFBCB7E00D6E166 /* XYBatchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */; };
+		ACBCD2271EFD1B1A00D654A7 /* XYProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBCD2261EFD1B1A00D654A7 /* XYProcessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		AC1A0A361EFBAAE100D6E166 /* XYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCache.m; sourceTree = "<group>"; };
 		AC1A0A381EFBCB7E00D6E166 /* XYBatchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBatchProcessor.h; sourceTree = "<group>"; };
 		AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYBatchProcessor.m; sourceTree = "<group>"; };
+		ACBCD2251EFD1B1A00D654A7 /* XYProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYProcessor.h; sourceTree = "<group>"; };
+		ACBCD2261EFD1B1A00D654A7 /* XYProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYProcessor.m; sourceTree = "<group>"; };
 		C32A01C6AF8FC97BC8F29F4C /* Pods-RichText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RichText/Pods-RichText.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +61,8 @@
 			children = (
 				10049C381EFA99840018FD1B /* XYRichTextVC.h */,
 				10049C391EFA99840018FD1B /* XYRichTextVC.m */,
+				ACBCD2251EFD1B1A00D654A7 /* XYProcessor.h */,
+				ACBCD2261EFD1B1A00D654A7 /* XYProcessor.m */,
 				AC1A0A381EFBCB7E00D6E166 /* XYBatchProcessor.h */,
 				AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */,
 				AC1A0A351EFBAAE100D6E166 /* XYCache.h */,
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBCD2271EFD1B1A00D654A7 /* XYProcessor.m in Sources */,
 				AC1A0A3A1EFBCB7E00D6E166 /* XYBatchProcessor.m in Sources */,
 				AC1A0A1F1EFA510A00D6E166 /* ViewController.m in Sources */,
 				AC1A0A371EFBAAE100D6E166 /* XYCache.m in Sources */,

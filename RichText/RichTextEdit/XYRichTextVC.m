@@ -27,7 +27,7 @@ static NSString* const keyRichTextImage = @"keyRichTextImage";
     return self;
 }
 @end
-@interface XYRichTextVC ()<YYTextViewDelegate, YYTextKeyboardObserver>
+@interface XYRichTextVC ()<YYTextViewDelegate>
 @property (nonatomic, assign) YYTextView *textView;
 @property (nonatomic, assign) NSUInteger imageCount;
 @property (nonatomic, strong) NSLayoutConstraint* toolBarBottom;
@@ -64,7 +64,7 @@ static NSString* const keyRichTextImage = @"keyRichTextImage";
     [toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[alubmBtn(40)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(alubmBtn)]];
     [toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[alubmBtn]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(alubmBtn)]];
     
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the season of light, it was the season of darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us. We were all going direct to heaven, we were all going direct the other way.\n\n这是最好的时代，这是最坏的时代；这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望之春，这是失望之冬；人们面前有着各样事物，人们面前一无所有；人们正在直登天堂，人们正在直下地狱。"];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] init];
     text.font = [UIFont systemFontOfSize:20];
     text.lineSpacing = 4;
     text.firstLineHeadIndent = 0;
@@ -217,7 +217,7 @@ static NSString* const keyRichTextImage = @"keyRichTextImage";
     }
     [self onSaveWithText:plainText images:imagesDic complete:isComplete];
 }
-- (void)onSaveWithText:(NSString*)content images:(NSDictionary<NSString*,XYRichTextImage*>*)images complete:(BOOL)complete; {
+- (void)onSaveWithText:(NSString*)content images:(NSDictionary<NSString*,XYRichTextImage*>*)images complete:(BOOL)complete {
     
 }
 @end
