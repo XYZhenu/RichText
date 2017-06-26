@@ -19,6 +19,10 @@ typedef NS_ENUM(NSUInteger,XYRichTextImageSaveType) {
 @property (nonatomic,strong,nullable)NSURL* url;
 @property (nonatomic,strong,nullable)NSString* identifier;
 @property (nonatomic,assign)BOOL isSelectOriginalPhoto;//default no
+
+@property (nonatomic,strong,nullable)NSString* uploadedUrl;
+@property (nonatomic,weak)NSOperation* operation;
+
 @end
 @interface XYRichTextVC : UIViewController
 @property (nonatomic,strong)NSString* picSymbolPrefix;//default [

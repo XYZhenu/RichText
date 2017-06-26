@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10049C3A1EFA99840018FD1B /* XYRichTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10049C391EFA99840018FD1B /* XYRichTextVC.m */; };
 		8C30E8EDF0AC76E5CC81743A /* Pods_RichText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7F461816EDF4C030D987F5 /* Pods_RichText.framework */; };
+		AC00AEB01F00A22900EEDC3E /* RichTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AC00AEAF1F00A22900EEDC3E /* RichTextVC.m */; };
 		AC1A0A191EFA510A00D6E166 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A181EFA510A00D6E166 /* main.m */; };
 		AC1A0A1C1EFA510A00D6E166 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A1B1EFA510A00D6E166 /* AppDelegate.m */; };
 		AC1A0A1F1EFA510A00D6E166 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0A1E1EFA510A00D6E166 /* ViewController.m */; };
@@ -25,6 +26,8 @@
 		10049C391EFA99840018FD1B /* XYRichTextVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRichTextVC.m; sourceTree = "<group>"; };
 		9B7F461816EDF4C030D987F5 /* Pods_RichText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45FDFC13F3C9B820C3DF756 /* Pods-RichText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichText.release.xcconfig"; path = "Pods/Target Support Files/Pods-RichText/Pods-RichText.release.xcconfig"; sourceTree = "<group>"; };
+		AC00AEAE1F00A22900EEDC3E /* RichTextVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextVC.h; sourceTree = "<group>"; };
+		AC00AEAF1F00A22900EEDC3E /* RichTextVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextVC.m; sourceTree = "<group>"; };
 		AC1A0A141EFA510A00D6E166 /* RichText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1A0A181EFA510A00D6E166 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC1A0A1A1EFA510A00D6E166 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				10049C391EFA99840018FD1B /* XYRichTextVC.m */,
 				ACBCD2251EFD1B1A00D654A7 /* XYProcessor.h */,
 				ACBCD2261EFD1B1A00D654A7 /* XYProcessor.m */,
+				AC00AEAE1F00A22900EEDC3E /* RichTextVC.h */,
+				AC00AEAF1F00A22900EEDC3E /* RichTextVC.m */,
 				AC1A0A381EFBCB7E00D6E166 /* XYBatchProcessor.h */,
 				AC1A0A391EFBCB7E00D6E166 /* XYBatchProcessor.m */,
 				AC1A0A351EFBAAE100D6E166 /* XYCache.h */,
@@ -257,6 +262,7 @@
 				ACBCD2271EFD1B1A00D654A7 /* XYProcessor.m in Sources */,
 				AC1A0A3A1EFBCB7E00D6E166 /* XYBatchProcessor.m in Sources */,
 				AC1A0A1F1EFA510A00D6E166 /* ViewController.m in Sources */,
+				AC00AEB01F00A22900EEDC3E /* RichTextVC.m in Sources */,
 				AC1A0A371EFBAAE100D6E166 /* XYCache.m in Sources */,
 				AC1A0A1C1EFA510A00D6E166 /* AppDelegate.m in Sources */,
 				10049C3A1EFA99840018FD1B /* XYRichTextVC.m in Sources */,
